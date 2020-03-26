@@ -15,7 +15,7 @@ warning: user_diskio.o uses 2-byte wchar_t yet the output is to use 4-byte wchar
 And link errors, 
 
 
-
+```
 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
 exit.c:(.text.exit+0x2c): undefined reference to `_exit'
 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: 32blit.o: in function `blit_update_vibration':
@@ -82,4 +82,4 @@ isattyr.c:(.text._isatty_r+0x18): undefined reference to `_isatty'
 lseekr.c:(.text._lseek_r+0x24): undefined reference to `_lseek'
 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o): in function `_read_r':
 readr.c:(.text._read_r+0x24): undefined reference to `_read'
-
+```
