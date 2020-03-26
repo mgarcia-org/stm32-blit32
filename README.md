@@ -21,11 +21,12 @@ Converts to:
 
 cd build && arm-none-eabi-gcc *.o
 
-
-Alot of warnings:
+The results is  alot of warnings:
 
 
 warning: user_diskio.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
+
+
 
 And link errors, two types:
 
@@ -33,7 +34,7 @@ And link errors, two types:
 1. _exit _write and _close etc I'm guessing it's not linking to a stdlib or something?
 
 
-2. htim2 which is instanced in tim.c line 29
+2. htim2 which is instanced in tim.c line 29, not sure why it's not 'linking'?
 
 
 
