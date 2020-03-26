@@ -73,7 +73,7 @@ Src/hrtim.c \
 Src/i2c.c \
 Src/i2c-msa301.c \
 Src/i2c-bq24295.c \
-Src/ltdc.c \
+#Src/ltdc.c \
 Src/quadspi.c \
 Src/spi.c \
 Src/spi-st7272a.c \
@@ -103,14 +103,14 @@ PREFIX := arm-none-eabi-
 # The gcc compiler bin path can be either defined in make command via GCC_PATH variable (> make GCC_PATH=xxx)
 # either it can be added to the PATH environment variable.
 ifdef GCC_PATH
-CC = $(GCC_PATH)/$(PREFIX)gcc
-AS = $(GCC_PATH)/$(PREFIX)gcc -x assembler-with-cpp
+CC = $(GCC_PATH)/$(PREFIX)gcc -fwide-exec-charset=UTF-16   
+AS = $(GCC_PATH)/$(PREFIX)gcc -x assembler-with-cpp -fwide-exec-charset=UTF-16   
 CP = $(GCC_PATH)/$(PREFIX)objcopy
 SZ = $(GCC_PATH)/$(PREFIX)size
 AR = $(GCC_PATH)/$(PREFIX)ar
 else
-CC = $(PREFIX)gcc
-AS = $(PREFIX)gcc -x assembler-with-cpp
+CC = $(PREFIX)gcc 
+AS = $(PREFIX)gcc -x assembler-with-cpp 
 CP = $(PREFIX)objcopy
 SZ = $(PREFIX)size
 AR = $(PREFIX)ar
@@ -121,7 +121,10 @@ BIN = $(CP) -O binary -S
 
 CPU = -mcpu=cortex-m7
 FPU = -mfpu=fpv5-d16
-FLOAT-ABI = -mfloat-abi=hard
+FLOAT-ABI = -mfloat-abi=softfp
+# -mfloat-abi=hard -mfpu=fpv4-sp-d16
+#-mfloat-abi=softfp
+#-mfloat-abi=hard 
 MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI) -specs=nosys.specs
 # -fpermissive
 
