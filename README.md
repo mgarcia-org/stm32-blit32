@@ -6,7 +6,7 @@ Decoupling the firmware would open up SDL1/2 porting, which means more software 
 This is just a quick test to see if I can decouple the firmware from the 32blit engine
 https://github.com/pimoroni/32blit-beta
 
-Copy and paste the 32blit-stm32 folder and paste, copy my Src and Inc file into them and my makefile.
+Copy and paste the 32blit-stm32 folder and copy my Src and Inc file into them and my makefile.
 It compiles, but doesn't build.. the lib or link
 
 Alot of : 
