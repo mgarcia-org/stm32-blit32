@@ -14,7 +14,7 @@ warning: user_diskio.o uses 2-byte wchar_t yet the output is to use 4-byte wchar
 
 And link errors, two types:
 1. _exit _write and _close etc I'm guessing it's not linking to a stdlib or something?
-2. ie htim2 which is instanced in tim.c line 29
+2. htim2 which is instanced in tim.c line 29
 
 ```
 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
