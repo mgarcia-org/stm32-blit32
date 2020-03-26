@@ -9,12 +9,33 @@ https://github.com/pimoroni/32blit-beta
 Copy and paste the 32blit-stm32 folder and copy my Src and Inc file into them and my makefile.
 It compiles, but doesn't build.. the lib or link
 
-Alot of : 
+
+I'm guessing the makefile line 198:
+```
+$(BUILD_DIR)/$(TARGET).elf: $(OBJECTS) Makefile
+	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
+	$(SZ) $@
+ ```
+ 
+Converts to: 
+
+cd build && arm-none-eabi-gcc *.o
+
+
+Alot of warnings:
+
+
 warning: user_diskio.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
 
 And link errors, two types:
+
+
 1. _exit _write and _close etc I'm guessing it's not linking to a stdlib or something?
+
+
 2. htim2 which is instanced in tim.c line 29
+
+
 
 ```
 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: 32blit/gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
